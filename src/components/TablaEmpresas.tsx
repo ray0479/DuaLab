@@ -37,7 +37,6 @@ export const TablaEmpresas = () => {
           <thead>
             <tr className="bg-gray-200">
               <th className="border px-4 py-2">Empresa</th>
-              <th className="border px-4 py-2">Nombre</th>
               <th className="border px-4 py-2">Direccion</th>
               <th className="border px-4 py-2">Telefono</th>
               <th className="border px-4 py-2">Correo electronico</th>
