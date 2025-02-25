@@ -1,0 +1,31 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    padding: 40px;
+}
+
+.encabezado {
+    display: flex;
+    justify-content: center; /* Mueve la imagen más a la derecha */
+    /*padding-right: 450px; /* Ajusta el espacio a la derecha */
+}
+
+.encabezado img {
+    width: 500px !important; ; /* Tamaño reducido */
+    height: 500px !important; ; /* Tamaño reducido */
+    object-fit: cover; /* Mantiene la proporción y recorta si es necesario */
+    border: 2px solid #000; /* Bordes para que parezcan cuadros */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Sombra para resaltar */
+}
+
+.container img {
+    width: 300px; /* Tamaño reducido */
+    height: 300px; /* Tamaño reducido */
+    object-fit: cover; /* Mantiene la proporción y recorta si es necesario */
+    border: 2px solid #000; /* Bordes para que parezcan cuadros */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Sombra para resaltar */
+}
