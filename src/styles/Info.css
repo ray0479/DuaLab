@@ -1,0 +1,47 @@
+/* Estilos generales para CompanyInfo */
+.p-6 {
+    padding: 1.5rem;
+    margin-top: 100px;
+  }
+  
+  .bg-gray-100 {
+    background-color: #f7fafc;
+  }
+  
+  .rounded-lg {
+    border-radius: 0.5rem;
+  }
+  
+  .shadow-md {
+    box-shadow: #a0f09e;
+  }
+  
+  .text-2xl {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .text-gray-800 {
+    color: #2d3748;
+  }
+  
+  .text-gray-600 {
+    color: #4a5568;
+  }
+  
+  .mt-2 {
+    margin-top: 0.5rem;
+  }
+  
+  .mt-4 {
+    margin-top: 1rem;
+  }
+  
+  .text-lg {
+    font-size: 1.125rem;
+    font-weight: 600;
+  }
+  
+  .text-gray-700 {
+    color: #4a5568;
+  }

@@ -1,0 +1,22 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    padding-top: 60px;
+  }
+  
+  /* Estilo del contenedor principal */
+  div {
+    padding: 20px;
+  }
+  
+  /* Estilo del título */
+  h1 {
+    margin: 0;
+    padding: 10px 20px;
+    position: absolute;
+    color:#a0f09e;
+    top: 0;
+    left: 0;
+  }
+  
