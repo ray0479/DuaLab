@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 interface DataRow {
-  id: number;
   Empresa: string;
   Dirección: string;
   Teléfono: string;
@@ -22,7 +21,7 @@ export const TablaEmpresas = () => {
         setLoading(false);
       })
       .catch((error) => {
-        setError("Error al cargar los datos.");
+        setError("Error al cargar los datos." + error);
         setLoading(false);
       });
   }, []);
@@ -37,7 +36,7 @@ export const TablaEmpresas = () => {
         <table className="min-w-full border border-gray-300 shadow-md">
           <thead>
             <tr className="bg-gray-200">
-              <th className="border px-4 py-2">ID</th>
+              <th className="border px-4 py-2">Empresa</th>
               <th className="border px-4 py-2">Nombre</th>
               <th className="border px-4 py-2">Direccion</th>
               <th className="border px-4 py-2">Telefono</th>
@@ -46,8 +45,7 @@ export const TablaEmpresas = () => {
           </thead>
           <tbody>
             {data.map((row) => (
-              <tr key={row.id} className="hover:bg-gray-100">
-                <td className="border px-4 py-2">{row.id}</td>
+              <tr key={row.Empresa} className="hover:bg-gray-100">
                 <td className="border px-4 py-2">{row.Empresa}</td>
                 <td className="border px-4 py-2">{row.Dirección}</td>
                 <td className="border px-4 py-2">{row.Teléfono}</td>
