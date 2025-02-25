@@ -6,6 +6,7 @@ import { Routes, Route} from 'react-router'
 import './styles/App.css'
 import {NavBar} from './components/navbar'
 import CompanyInfo from './components/Info';
+import Inicio from './components/Inicio'
 
 function App() {
   //const [count, setCount] = useState(0)
@@ -19,6 +20,7 @@ function App() {
         <div className="container">
           <Routes>
             <Route path="info" element={<CompanyInfo/>} />
+            <Route path="/" element={<Inicio/>} />
           </Routes>
         </div>
       {/*</LoginProvider> */}
