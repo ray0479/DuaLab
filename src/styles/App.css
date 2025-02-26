@@ -3,6 +3,7 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     padding-top: 60px;
+    background-color: #d1f5d1;
   }
   
   /* Estilo del contenedor principal */
@@ -15,8 +16,18 @@ body {
     margin: 0;
     padding: 10px 20px;
     position: absolute;
-    color:#a0f09e;
+    color:#367e35;
     top: 0;
     left: 0;
   }
+    
+    /* Estilo de la imagen */
+    .header img {
+        position: absolute;
+        top: 0;
+        right: 20px;  /* Ajusta este valor para mover la imagen más hacia la derecha si es necesario */
+        width: 100px;  /* Puedes ajustar el tamaño de la imagen si lo necesitas */
+        height: auto;
+    }
+  
   

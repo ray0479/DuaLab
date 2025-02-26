@@ -11,10 +11,14 @@
 
   .navbar a {
     color: rgb(0, 100, 13);
+    font-weight: bold;
     text-decoration: none;
     padding: 10px 20px;
+    transition: border-radius 0.5s ease, color 0.5s ease;
   }
   
   .navbar a:hover {
     background-color: #a0f09e;
+    color:#285827;
+    border-radius: 15px;
   }

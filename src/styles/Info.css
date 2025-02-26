@@ -1,11 +1,12 @@
 /* Estilos generales para CompanyInfo */
 .p-6 {
     padding: 1.5rem;
-    margin-top: 100px;
+    margin-top: 60px;
   }
   
   .bg-gray-100 {
-    background-color: #f7fafc;
+    background-color: #a0f09e;
+    /* background-color: #f9fcf7; */
   }
   
   .rounded-lg {
@@ -45,3 +46,12 @@
   .text-gray-700 {
     color: #4a5568;
   }
+
+  .text{
+    color: #4a5568;
+  }
+
+  .text-inside {
+    color: #4a5568;
+  }
+
