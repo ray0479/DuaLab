@@ -1,24 +1,17 @@
 .navbar {
-    display: flex;
-    flex-direction: row;
-    position: absolute;
-    top: 70px; /* Ajusta según el tamaño del título */
-    left: 0;
-    width: 100%;
-    background-color: #a0f09e;
-    padding: 10px 0;
-  }
+  background-color: #c2deb3;
 
-  .navbar a {
-    color: rgb(0, 100, 13);
-    font-weight: bold;
-    text-decoration: none;
-    padding: 10px 20px;
-    transition: border-radius 0.5s ease, color 0.5s ease;
-  }
-  
-  .navbar a:hover {
-    background-color: #a0f09e;
-    color:#285827;
-    border-radius: 15px;
-  }
+}
+
+
+
+.nav-item {
+  padding: 10px 10px;
+  text-decoration: none;
+  transition: border-radius 0.5s ease, color 0.5s ease;
+}
+
+.nav-item:hover {
+  background-color: #a0f09e;
+  border-radius: 15px;
+}

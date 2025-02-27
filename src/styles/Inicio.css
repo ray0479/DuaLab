@@ -1,12 +1,22 @@
+div{
+    display:contents;
+}
+
+p{
+    text-align: justify;
+    font-size:large;
+}
+
 .container {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     justify-content: center;
-    padding: 40px;
+    padding: 30px;
 }
 
 .encabezado {
+    padding: 30px;
     display: flex;
     justify-content: center; /* Mueve la imagen más a la derecha */
     /*padding-right: 450px; /* Ajusta el espacio a la derecha */
