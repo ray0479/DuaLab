@@ -1,6 +1,3 @@
-div{
-    display:contents;
-}
 
 p{
     text-align: justify;
@@ -8,6 +5,7 @@ p{
 }
 
 .container {
+    margin-top: 60px;
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
@@ -23,8 +21,8 @@ p{
 }
 
 .encabezado img {
-    width: 500px !important; ; /* Tamaño reducido */
-    height: 500px !important; ; /* Tamaño reducido */
+    width: 250px !important; ; /* Tamaño reducido */
+    height: 250px !important; ; /* Tamaño reducido */
     object-fit: cover; /* Mantiene la proporción y recorta si es necesario */
     border: 2px solid #000; /* Bordes para que parezcan cuadros */
     border-radius: 10px; /* Bordes redondeados */

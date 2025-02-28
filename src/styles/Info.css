@@ -1,4 +1,7 @@
 /* Estilos generales para CompanyInfo */
+div{
+  text-align: left;
+}
 .p-6 {
     padding: 1.5rem;
     margin-top: 60px;

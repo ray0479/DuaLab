@@ -9,8 +9,6 @@ export const NavBar = () => {
         <nav className="navbar fixed-top navbar-expand-lg">
             <div className="container-fluid">
                 <a className="navbar-brand" href="#">
-                    {/* <img src='../assets/DualabIcon.png' alt="Logo" className="d-inline-block align-text-top" /> */}
-                    {/* <NavLink className="navbar-element mb-0 h4" to="/">Inicio</NavLink> */}
                     <span className="mb-0 h4">DuaLab</span>
                 </a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,7 +20,7 @@ export const NavBar = () => {
                             <NavLink to='/' className="nav-link active">Inicio</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink to='/info' className="nav-link active">Información</NavLink>
+                            <NavLink to='/info' className="nav-link active">Proyectos</NavLink>
                         </li>
                     </ul>
                 </div>

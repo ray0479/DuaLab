@@ -13,8 +13,15 @@ const Inicio = () => {
                 </p>
             </div>
             <div className="encabezado">
-                <img src='../src/assets/DuaLab.jpeg' />
+                <img src='../src/assets/logos/DualabIcon.png'/>
             </div>
+
+            <p>
+                Con esta premisa nace DuaLab, una iniciativa innovadora que busca estrechar la conexión entre los estudiantes
+                de Formación Profesional y el sector empresarial. A través de este programa, los alumnos de primer año tienen
+                la oportunidad de aplicar sus conocimientos en escenarios reales, enfrentándose a desafíos concretos que les
+                permiten desarrollar competencias clave desde el inicio de su formación.
+            </p>
 
             <div className="container">
                 <img src='../src/assets/DL_1.jpeg' />
@@ -24,8 +31,8 @@ const Inicio = () => {
                 <img src='../src/assets/DL_5.jpeg' />
                 <img src='../src/assets/DL_6.jpeg' />
             </div>
-
         </div>
+
     );
 };
 
