@@ -13,3 +13,13 @@
   background-color: #a0f09e;
   border-radius: 15px;
 }
+
+.nav-link {
+  font-weight: bold;
+  color:black;
+  transition: color 0.5s ease;
+}
+
+.nav-link:hover {
+  color: #014200;
+}
