@@ -10,28 +10,28 @@ const Login = () => {
   const navigate = useNavigate(); // Inicializa el hook useNavigate
 
   const validatePassword = (password: string) => {
-    return /^(?=.*\d).{7,}$/.test(password);
+    return /^(?=.*\d).{7,}$/.test(password); //Requisitos de la conytraseña
   };
 
   const handleSubmit = (e : React.FormEvent) => {
     e.preventDefault();
     
-    const existingUser = localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user") as string) : null;
+    const existingUser = localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user") as string) : null; //Guardar datos en local
 
-    if (existingUser && existingUser.email === email) {
+    if (existingUser && existingUser.email === email) { //Comprueba si se ha usado el correo anteriormente
       setError("Error, este correo ya está registrado");
       setSuccess("");
       return;
     }
     
     if (!validatePassword(password)) {
-      setError("Error, la contraseña debe tener al menos 7 caracteres y 1 número");
+      setError("Error, la contraseña debe tener al menos 7 caracteres y 1 número");//Si la contraseña no cumple los requisitos, sale este mensaje
       setSuccess("");
       return;
     }
     
     setError("");
-    setSuccess("Login successful!");
+    setSuccess("Login successful!"); //Logueo correctamente
     
     // Guardar los datos en localStorage
     localStorage.setItem("user", JSON.stringify({ email, password }));
