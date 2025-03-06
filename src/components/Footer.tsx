@@ -32,12 +32,13 @@ export const Footer = () => {
           <div className="col-md-6 mb-3">
             <h5>Contacto</h5>
             <p><FaEnvelope className="icon" /> viaoptimadualab@gmail.com</p>
-            <p><FaPhone className="icon" /> +34</p>
+            <p><FaPhone className="icon" />+34 691 01 19 93</p>
           </div>
           <div className="col-md-6 mb-3">
             <h5>Dirección</h5>
-            <p><FaMapMarkerAlt className="icon" /> Calle Sao Paulo, 6</p>
-            <p>Las Palmas de Gran Canaria, España</p>
+            <p><FaMapMarkerAlt className="icon" /> Calle Sao Paulo, 6. 
+            Las Palmas de Gran Canaria, España</p>
+            
           </div>
         </div>
         {/* El mensaje de copyright está aquí, debajo de los elementos de contacto */}
@@ -47,4 +48,4 @@ export const Footer = () => {
   );
 };
 
-
+//<p>Las Palmas de Gran Canaria, España</p>
