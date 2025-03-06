@@ -1,5 +1,55 @@
-footer {
+/*footer {
   bottom: 0;
   width: 100%;
   background-color: #c2deb3;
+}*/
+
+/* Eliminar márgenes adicionales en las columnas */
+.footer .row .col-md-6 {
+  margin-bottom: 0 !important;  /* Elimina el margen inferior */
+}
+
+/* Ajuste del tamaño del icono y su margen */
+.footer .icon {
+  margin-right: 5px;  /* Reduce el espacio a la derecha del icono */
+}
+
+/* Si quieres ajustar la separación entre "Contacto" y "Dirección" específicamente */
+.footer .row {
+  margin-bottom: 0; /* Ajusta o elimina el margen inferior entre las columnas */
+}
+
+/* Asegurarse de que el mensaje de copyright esté siempre al final */
+.footer {
+  position:relative;
+  bottom: 0;
+  
+  background-color: #c2deb3;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra el contenido horizontalmente */
+  justify-content: center; /* Centra el contenido verticalmente */
+
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  padding: 8px 0;
+  margin: 0 auto;
+}
+
+.containers {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Asegura que todo esté centrado */
+
+  width: 100%;
+  max-width: 1100px;
+  padding: 5px 20px;
+}
+
+.text-muted {
+  text-align: center;
+  margin-top: 5px; /* Ajusta el margen superior */
 }
