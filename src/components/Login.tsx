@@ -10,7 +10,7 @@ const Login = () => {
   const navigate = useNavigate(); // Inicializa el hook useNavigate
 
   const validatePassword = (password: string) => {
-    return /^(?=.*\d).{7,}$/.test(password); //Requisitos de la conytraseña
+    return /^(?=.*\d).{7,}$/.test(password); //Requisitos de la contraseña
   };
 
   const handleSubmit = (e : React.FormEvent) => {

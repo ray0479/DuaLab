@@ -36,9 +36,7 @@ export const Footer = () => {
           </div>
           <div className="col-md-6 mb-3">
             <h5>Dirección</h5>
-            <p><FaMapMarkerAlt className="icon" /> Calle Sao Paulo, 6. 
-            Las Palmas de Gran Canaria, España</p>
-            
+            <p><FaMapMarkerAlt className="icon" /> Calle Sao Paulo, 6. Las Palmas de Gran Canaria, España</p>
           </div>
         </div>
         {/* El mensaje de copyright está aquí, debajo de los elementos de contacto */}
