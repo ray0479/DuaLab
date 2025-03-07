@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import '../styles/Login.css';
+
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -45,7 +47,7 @@ const Login = () => {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <div className="rounded-lg shadow-lg p-6 bg-white w-96">
-        <h2 className="text-2xl font-bold text-center mb-4">Login</h2>
+        <h2 className="text-2xl font-bold text-center mb-4">Inicio sesion</h2>
         <p className="text-gray-500 text-sm text-center mb-2">
           Consejo: la contraseña debe tener al menos 7 caracteres y 1 número
         </p>
