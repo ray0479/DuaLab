@@ -6,6 +6,7 @@ import CompanyInfo from './components/Info';
 import Inicio from './components/Inicio';
 import { QuienesSomos } from './components/QuienesSomos'
 import Login from './components/Login';
+import PlanFormativo from './components/PlanFormativo'
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
             <Route path="/" element={<Inicio/>} />
             <Route path="info" element={<CompanyInfo/>} />
             <Route path="login" element={<Login/>} />
+            <Route path="plan" element={<PlanFormativo/>} />
           </Routes>
         </div>
         

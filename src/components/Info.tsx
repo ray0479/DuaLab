@@ -9,7 +9,7 @@ const CompanyInfo = () => {
         <div className="mt-4">
           <h2 className="text-lg font-semibold text-gray-700">Información de contacto</h2>
           <p className="text-gray-600">Correo: viaoptimadualab@gmail.com</p>
-          <p className="text-gray-600">Teléfono: +34 </p>
+          <p className="text-gray-600">Teléfono: +34 691 01 19 93</p>
           <p className="text-gray-600">Dirección: Calle Sao Paulo 6, Las Palmas de Gran Canaria, España</p>
         </div>
         <div className="mt-4">
