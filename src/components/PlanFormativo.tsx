@@ -30,8 +30,8 @@ const FetchMySQLData: React.FC = () => {
   if (error) return <p>{error}</p>;
 
   return (
-    <div style={{ border: "1px solid #ddd", borderRadius: "8px", padding: "16px", boxShadow: "2px 2px 10px rgba(0,0,0,0.1)" }}>
-      <table style={{ width: "100%", borderCollapse: "collapse" }}>
+    <div>
+      <table>
         <thead>
           <tr style={{ backgroundColor: "#f4f4f4" }}>
             <th style={{ border: "1px solid #ddd", padding: "8px" }}>Bloque</th>
