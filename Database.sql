@@ -10,6 +10,22 @@ Encargado VARCHAR( 100 ),
 Puesto VARCHAR( 100 )
 );
 
+DROP TABLE IF EXISTS users;
+
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(100) NOT NULL,
+    password VARCHAR(255) NOT NULL
+);
+
+
+/* INSERT QUERY */
+INSERT INTO users (email, password)
+VALUES 
+(
+    'usuario1@gmail.com', 'Ostras123'
+);
+
 /* INSERT QUERY */
 INSERT INTO Dualab( Empresa,Dirección,Teléfono,Correoelectrónico,Páginaweb,Encargado,Puesto )
 VALUES

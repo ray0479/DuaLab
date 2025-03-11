@@ -4,7 +4,6 @@ import {NavBar} from './components/navbar'
 import { Footer } from './components/Footer';
 import CompanyInfo from './components/Info';
 import Inicio from './components/Inicio';
-import { QuienesSomos } from './components/QuienesSomos'
 import Login from './components/Login';
 import FetchMySQLData from './components/PlanFormativo';
 // import {Plan} from './components/PlanFormativo'

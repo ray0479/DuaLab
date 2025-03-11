@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
 import '../styles/Login.css';
 
 const Login = () => {
@@ -8,50 +7,92 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
+  const [isRegistering, setIsRegistering] = useState(false); // Estado para alternar entre login y registro
 
   const navigate = useNavigate(); // Inicializa el hook useNavigate
 
+  // Validación de contraseña
   const validatePassword = (password: string) => {
-    return /^(?=.*\d).{7,}$/.test(password); //Requisitos de la contraseña
+    return /^(?=.*\d).{7,}$/.test(password); // Requisitos de la contraseña
   };
 
-  const handleSubmit = (e : React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    const existingUser = localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user") as string) : null; //Guardar datos en local
 
-    if (existingUser && existingUser.email === email) { //Comprueba si se ha usado el correo anteriormente
-      setError("Error, este correo ya está registrado");
+    const loginData = { email, password };
+
+    try {
+      const response = await fetch("http://localhost:5000/api/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(loginData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        localStorage.setItem("authToken", data.token);  // Guardar token JWT
+        setSuccess("Login exitoso");
+        setError("");
+        navigate("/");  // Redirigir a la página principal
+      } else {
+        setError(data.error || "Error al iniciar sesión");
+        setSuccess("");
+      }
+    } catch (err) {
+      setError("Hubo un error al conectar con el servidor.");
       setSuccess("");
-      return;
     }
-    
+  };
+
+  const handleRegister = async (e: React.FormEvent) => {
+    e.preventDefault();
+
     if (!validatePassword(password)) {
-      setError("Error, la contraseña debe tener al menos 7 caracteres y 1 número");//Si la contraseña no cumple los requisitos, sale este mensaje
+      setError("La contraseña debe tener al menos 7 caracteres y 1 número.");
       setSuccess("");
       return;
     }
-    
-    setError("");
-    setSuccess("Login successful!"); //Logueo correctamente
-    
-    // Guardar los datos en localStorage
-    localStorage.setItem("user", JSON.stringify({ email, password }));
-    
-    console.log("Email:", email, "Password:", password);
 
-    // Redirigir a la página de inicio después de un login exitoso
-    navigate("/"); // Asegúrate de que "/home" sea la ruta de tu página de inicio
+    const registerData = { email, password };
+
+    try {
+      const response = await fetch("http://localhost:5000/api/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(registerData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSuccess("Registro exitoso. Ahora puedes iniciar sesión.");
+        setError("");
+        setIsRegistering(false);  // Regresar al formulario de inicio de sesión
+      } else {
+        setError(data.error || "Error al registrar el usuario.");
+        setSuccess("");
+      }
+    } catch (err) {
+      setError("Hubo un error al conectar con el servidor.");
+      setSuccess("");
+    }
   };
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <div className="rounded-lg shadow-lg p-6 bg-white w-96">
-        <h2 className="text-2xl font-bold text-center mb-4">Inicio sesion</h2>
+        <h2 className="text-2xl font-bold text-center mb-4">
+          {isRegistering ? "Registro" : "Inicio de sesión"}
+        </h2>
         <q className="text-gray-500 text-sm text-center mb-2">
           Consejo: la contraseña debe tener al menos 7 caracteres y 1 número
         </q>
-        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+
+        <form
+          onSubmit={isRegistering ? handleRegister : handleLogin}
+          className="flex flex-col gap-4"
+        >
           <div className="flex flex-col gap-4">
             <input
               type="email"
@@ -63,7 +104,7 @@ const Login = () => {
             />
             <input
               type="password"
-              placeholder="Password"
+              placeholder="Contraseña"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className="border border-gray-300 p-2 rounded-lg"
@@ -74,15 +115,29 @@ const Login = () => {
               type="submit"
               className="bg-black text-white p-2 rounded-lg hover:bg-gray-800 transition"
             >
-              Login
+              {isRegistering ? "Registrarse" : "Iniciar Sesión"}
             </button>
           </div>
         </form>
+
         {success && <p className="text-green-600 text-center mt-4">{success}</p>}
+
+        <p className="text-center text-gray-600 mt-4">
+          {isRegistering
+            ? "¿Ya tienes una cuenta? "
+            : "¿No tienes una cuenta? "}
+          <span
+            className="text-blue-600 cursor-pointer hover:underline"
+            onClick={() => setIsRegistering(!isRegistering)}  // Cambia entre login y registro
+          >
+            {isRegistering ? "Inicia sesión aquí" : "Regístrate aquí"}
+          </span>
+        </p>
       </div>
     </div>
   );
 };
 
 export default Login;
+
       
