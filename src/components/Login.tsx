@@ -143,6 +143,21 @@ const Login = () => {
     }
   };
 
+  const handleModeChange = (mode: "login" | "register" | "reset") => {
+    setSuccess("");
+    setError("");
+    if (mode === "login") {
+      setIsRegistering(false);
+      setIsResetting(false);
+    } else if (mode === "register") {
+      setIsRegistering(true);
+      setIsResetting(false);
+    } else if (mode === "reset") {
+      setIsRegistering(false);
+      setIsResetting(true);
+    }
+  };
+
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <div className="rounded-lg shadow-lg p-6 bg-white w-96">
@@ -216,7 +231,7 @@ const Login = () => {
           {isResetting ? (
             <span
               className="text-blue-600 cursor-pointer hover:underline"
-              onClick={() => setIsResetting(false)}
+              onClick={() => handleModeChange("login")}
             >
               Volver al inicio de sesión
             </span>
@@ -225,7 +240,7 @@ const Login = () => {
               ¿Ya tienes una cuenta?{" "}
               <span
                 className="text-blue-600 cursor-pointer hover:underline"
-                onClick={() => setIsRegistering(false)}
+                onClick={() => handleModeChange("login")}
               >
                 Inicia sesión aquí
               </span>
@@ -235,7 +250,7 @@ const Login = () => {
               ¿No tienes una cuenta?{" "}
               <span
                 className="text-blue-600 cursor-pointer hover:underline"
-                onClick={() => setIsRegistering(true)}
+                onClick={() => handleModeChange("register")}
               >
                 Regístrate aquí
               </span>
@@ -247,7 +262,7 @@ const Login = () => {
           <p className="text-center text-gray-600 mt-4">
             <span
               className="text-blue-600 cursor-pointer hover:underline"
-              onClick={() => setIsResetting(true)}
+              onClick={() => handleModeChange("reset")}
             >
               ¿Olvidaste tu contraseña?
             </span>

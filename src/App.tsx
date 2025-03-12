@@ -13,8 +13,6 @@ function App() {
   return (
     <>
       <NavBar />
-  
-      
         <div className="container">
           <Routes>
             <Route path="/" element={<Inicio/>} />
@@ -23,8 +21,6 @@ function App() {
             <Route path="plan" element={<FetchMySQLData/>} />
           </Routes>
         </div>
-        
-      
       <Footer/>
     </>
   );

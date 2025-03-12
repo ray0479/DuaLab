@@ -24,11 +24,12 @@ export const NavBar = () => {
                         </li>
 
                         <li className="nav-item">
-                            <NavLink to='/login' className="nav-link">Login</NavLink>
-                        </li>
-
-                        <li className="nav-item">
                             <NavLink to='/plan' className="nav-link">Plan Formativo</NavLink>
+                        </li>
+                    </ul>
+                    <ul className="navbar-nav ms-auto">
+                        <li className="nav-item">
+                            <NavLink to='/login' className="nav-link">Login</NavLink>
                         </li>
                     </ul>
                 </div>
