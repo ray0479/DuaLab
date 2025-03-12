@@ -11,6 +11,7 @@ const Login = () => {
   const [error, setError] = useState("");
   const [isRegistering, setIsRegistering] = useState(false);
   const [isResetting, setIsResetting] = useState(false); // Estado para alternar recuperación de contraseña
+  const [emailConfirmed, setEmailConfirmed] = useState(false); // Estado para confirmar el email
 
   const navigate = useNavigate();
 
@@ -95,7 +96,7 @@ const Login = () => {
       if (response.ok) {
         setSuccess("Correo electrónico verificado. Ahora puedes restablecer tu contraseña.");
         setError("");
-        setIsResetting(true); // Cambiar al formulario de restablecimiento de contraseña
+        setEmailConfirmed(true); // Confirmar el email
       } else {
         setError(data.error || "Error en la recuperación.");
         setSuccess("");
@@ -146,6 +147,7 @@ const Login = () => {
   const handleModeChange = (mode: "login" | "register" | "reset") => {
     setSuccess("");
     setError("");
+    setEmailConfirmed(false); // Resetear la confirmación del email
     if (mode === "login") {
       setIsRegistering(false);
       setIsResetting(false);
@@ -172,7 +174,7 @@ const Login = () => {
         )}
 
         <form
-          onSubmit={isResetting ? handleResetPassword : isRegistering ? handleRegister : handleLogin}
+          onSubmit={isResetting ? (emailConfirmed ? handleResetPassword : handleForgotPassword) : isRegistering ? handleRegister : handleLogin}
           className="flex flex-col gap-4"
         >
           <input
@@ -182,6 +184,7 @@ const Login = () => {
             onChange={(e) => setEmail(e.target.value)}
             className="border border-gray-300 p-2 rounded-lg"
             required
+            disabled={isResetting && emailConfirmed} // Deshabilitar el campo de email si el email está confirmado
           />
 
           {!isResetting && (
@@ -195,7 +198,7 @@ const Login = () => {
             />
           )}
 
-          {isResetting && (
+          {isResetting && emailConfirmed && (
             <>
               <input
                 type="password"
@@ -223,7 +226,7 @@ const Login = () => {
             type="submit"
             className="bg-black text-white p-2 rounded-lg hover:bg-gray-800 transition"
           >
-            {isResetting ? "Restablecer contraseña" : isRegistering ? "Registrarse" : "Iniciar Sesión"}
+            {isResetting ? (emailConfirmed ? "Restablecer contraseña" : "Verificar correo") : isRegistering ? "Registrarse" : "Iniciar Sesión"}
           </button>
         </form>
 
