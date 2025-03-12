@@ -61,6 +61,62 @@ app.post("/api/login", (req, res) => {
   );
 });
 
+
+// Ruta para recuperar la contraseña
+app.post("/api/forgot-password", (req, res) => {
+  const { email } = req.body;
+
+  if (!email) {
+    return res.status(400).json({ error: "El email es requerido." });
+  }
+
+  console.log("📩 Solicitando recuperación para el email:", email); // Verificar el email recibido
+
+  // Consultar en la base de datos si el email existe
+  db.query("SELECT * FROM users WHERE email = ?", [email], (err, results) => {
+    if (err) {
+      console.error("❌ Error al buscar el email:", err); // Log detallado del error
+      return res.status(500).json({ error: "Error en el servidor" });
+    }
+
+    if (results.length === 0) {
+      console.log(`❌ No se encontró el correo: ${email}`); // Verificar si el correo no existe
+      return res.status(404).json({ error: "No existe una cuenta con este email." });
+    }
+
+    console.log(`✔️ El correo existe: ${email}`); // Verificar si el correo fue encontrado
+
+    res.json({ message: "Email Confirmado" });
+  });
+});
+
+// Ruta para restablecer la contraseña
+app.post("/api/reset-password", (req, res) => {
+  const { email, newPassword } = req.body;
+
+  if (!email || !newPassword) {
+    return res.status(400).json({ error: "El email y la nueva contraseña son requeridos." });
+  }
+
+  // Actualizar la contraseña en la base de datos
+  db.query("UPDATE users SET password = ? WHERE email = ?", [newPassword, email], (err, results) => {
+    if (err) {
+      console.error("❌ Error al actualizar la contraseña:", err); // Log detallado del error
+      return res.status(500).json({ error: "Error en el servidor" });
+    }
+
+    if (results.affectedRows === 0) {
+      console.log(`❌ No se encontró el correo: ${email}`); // Verificar si el correo no existe
+      return res.status(404).json({ error: "No existe una cuenta con este email." });
+    }
+
+    console.log(`✔️ Contraseña actualizada para el correo: ${email}`); // Verificar si la contraseña fue actualizada
+
+    res.json({ message: "Contraseña restablecida con éxito" });
+  });
+});
+
+
 app.post("/api/register", (req, res) => {
   const { email, password } = req.body;
 
