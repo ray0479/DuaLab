@@ -33,20 +33,20 @@ const FetchMySQLData: React.FC = () => {
     <div>
       <table>
         <thead>
-          <tr style={{ backgroundColor: "#f4f4f4" }}>
-            <th style={{ border: "1px solid #ddd", padding: "8px" }}>Bloque</th>
-            <th style={{ border: "1px solid #ddd", padding: "8px" }}>Descripción</th>
-            <th style={{ border: "1px solid #ddd", padding: "8px" }}>Tareas a Realizar</th>
-            <th style={{ border: "1px solid #ddd", padding: "8px" }}>Ejemplos</th>
+          <tr>
+            <th>Bloque</th>
+            <th>Descripción</th>
+            <th>Tareas a Realizar</th>
+            <th>Ejemplos</th>
           </tr>
         </thead>
         <tbody>
           {data.map((item, index) => (
             <tr key={index}>
-              <td style={{ border: "1px solid #ddd", padding: "8px" }}>{item.Bloque}</td>
-              <td style={{ border: "1px solid #ddd", padding: "8px" }}>{item.Descripcion}</td>
-              <td style={{ border: "1px solid #ddd", padding: "8px" }}>{item.Tareas_A_Realizar}</td>
-              <td style={{ border: "1px solid #ddd", padding: "8px" }}>{item.Ejemplos}</td>
+              <td>{item.Bloque}</td>
+              <td>{item.Descripcion}</td>
+              <td>{item.Tareas_A_Realizar}</td>
+              <td>{item.Ejemplos}</td>
             </tr>
           ))}
         </tbody>
